@@ -1,4 +1,4 @@
- import memesData from "./memesData.js"
+
  
  function Meme() {
     return (
@@ -12,5 +12,5 @@
         </main>
     )
 }
-memesData
+
 export default Meme
