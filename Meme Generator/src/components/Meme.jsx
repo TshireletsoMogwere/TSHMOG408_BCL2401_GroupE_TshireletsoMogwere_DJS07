@@ -1,5 +1,5 @@
 import React from "react"
-import memesData from "../memesData"
+// import memes from "./memesData.jsx"
 
  
  function Meme() {
@@ -38,22 +38,39 @@ function handleChange(event) {
         [name]: value
     }))
 }
-//     // Selects random images from memes array
-//     const memesArray = memesData.data.memes
-//     const randomNumber = Math.floor(Math.random() * memesArray.length) 
-//     setImageMeme(memesArray[randomNumber].url)
+
 // }
-// return (
-//         // Creates a form component
-//         <main>
-//                 <div className="form">
-//                 <input type="text" id="top-text" className="form--input" placeholder="Top text"/>
-//                 <input type="text" className="form--input" placeholder="Bottom text"/>
-//                 <button onClick={getImageMeme}className="form--button">Get a new meme image 🖼️</button>
-//                 <img src={imageMeme} className="meme--image"/>
-//                 </div>
-//         </main>
-//     )
+return (
+     // Creates a form component
+
+<main>
+<div className="form">
+    <input 
+        type="text"
+        placeholder="Top text"
+        className="form--input"
+        name="topText"
+        value={meme.topText}
+        onChange={handleChange}
+    />
+    <input 
+        type="text"
+        placeholder="Bottom text"
+        className="form--input"
+        name="bottomText"
+        value={meme.bottomText}
+        onChange={handleChange}
+    />
+
+    <button className="form--button" onClick={getMemeImage}> Get a new meme image 🖼️</button>
+</div>
+            <div className="meme">
+                <img src={meme.randomImage} className="meme--image" />
+                <h2 className="meme--text top">{meme.topText}</h2>
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
+            </div>
+        </main>
+    )
 }
  
  
