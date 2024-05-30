@@ -17,9 +17,27 @@ React.useEffect(() => {
         .then(data => setAllMemes(data.data.memes))
 }, [])
 
+
+
 // const [imageMeme, setImageMeme] = React.useState("http://i.imgflip.com/1bij.jpg")
  
-// function getImageMeme() {
+function getMemeImage() {
+    const randomNumber = Math.floor(Math.random() * allMemes.length)
+    const url = allMemes[randomNumber].url
+    setMeme(prevMeme => ({
+        ...prevMeme,
+        randomImage: url
+    }))
+    
+}
+
+function handleChange(event) {
+    const {name, value} = event.target
+    setMeme(prevMeme => ({
+        ...prevMeme,
+        [name]: value
+    }))
+}
 //     // Selects random images from memes array
 //     const memesArray = memesData.data.memes
 //     const randomNumber = Math.floor(Math.random() * memesArray.length) 
